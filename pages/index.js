@@ -1,41 +1,90 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import { gql, GraphQLClient } from 'graphql-request';
-
-export default function Home() {
-    return (
-        <div className={styles.container}>
-            <Head>
-                <title>Bonita Cafe</title>
-                <meta name="Bonita Cafe" content="Bonita Cafe" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-
-            <main className={styles.main}></main>
-
-            <footer className={styles.footer}></footer>
-        </div>
-    );
-}
-
-const query = gql`
-    query MyQuery {
+import { gql } from 'graphql-request';
+import { request } from '../lib/datocms';
+import { Intro } from '../components/Intro/Intro';
+import FeaturedProduct from '../components/FeaturedProduct/FeaturedProduct';
+import { ProductCard } from '../components/ProductCard/ProductCard';
+import { Store } from '../components/Store/Store';
+const HOMEPAGE_QUERY = gql`
+    query HOMEPAGE_QUERY {
         intro {
-            name
             id
-            introDetails {
-                ... on IntroElementRecord {
-                    bigImage {
-                        id
-                    }
-                    bigTitle
-                    subtitle
-                    bigImage {
-                        id
-                        blurhash
-                    }
+            subtitle
+            title
+            bigImage {
+                url
+            }
+        }
+
+        productWithIngredient {
+            ingredients {
+                ingredient
+                id
+            }
+            product {
+                id
+                productName
+                productImage {
+                    url
+                }
+            }
+        }
+
+        productCard {
+            product {
+                id
+                productName
+                productImage {
+                    url
+                }
+            }
+        }
+
+        store {
+            stores {
+                id
+                storeName
+                storeWebsite
+                storeImage {
+                    url
                 }
             }
         }
     }
 `;
+
+export async function getStaticProps() {
+    const data = await request({
+        query: HOMEPAGE_QUERY,
+    });
+
+    return {
+        props: data,
+    };
+}
+
+export default function Home({
+    intro,
+    productWithIngredient,
+    productCard,
+    store,
+}) {
+    console.log(
+        'from index:',
+        intro,
+        productWithIngredient,
+        productCard,
+        store
+    );
+    return (
+        <>
+            <Head>
+                <title>Bonita Cafe</title>
+            </Head>
+            <Intro details={intro} />
+            <FeaturedProduct featuredProduct={productWithIngredient} />
+            <ProductCard products={productCard.product} />
+            <Store stores={store.stores} />
+        </>
+    );
+}

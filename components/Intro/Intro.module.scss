@@ -1,0 +1,33 @@
+.intro {
+    $mobile: 598px;
+    position: relative;
+    display: grid;
+
+    .image {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: var(--black);
+            opacity: 0.15;
+
+            @media screen and (min-width: $mobile) {
+                opacity: 0.5;
+            }
+        }
+    }
+    .textbox {
+        display: grid;
+
+        @media screen and (min-width: $mobile) {
+            position: absolute;
+            z-index: var(--layer-1);
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+            color: var(--brand-2);
+        }
+    }
+}

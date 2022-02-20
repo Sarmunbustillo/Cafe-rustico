@@ -1,0 +1,35 @@
+:where(html) {
+  --size-000: -0.8rem;
+  --size-00: -0.4rem;
+  --size-1: 0.4rem;
+  --size-2: 0.8rem;
+  --size-3: 1.6rem;
+  --size-4: 2rem;
+  --size-5: 2.4rem;
+  --size-6: 2.8rem;
+  --size-7: 3.2rem;
+  --size-8: 4.8rem;
+  --size-9: 6.4rem;
+  --size-10: 8rem;
+  --size-11: 12rem;
+  --size-12: 16rem;
+  --size-13: 24rem;
+  --size-14: 32rem;
+  --size-15: 48rem;
+  --size-fluid-1: clamp(var(--size-2) 1vw, var(--size-3));
+  --size-fluid-2: clamp(var(--size-2), 2vw, var(--size-5));
+  --size-fluid-3: clamp(var(--size-5), 3vw, var(--size-7));
+  --size-fluid-4: clamp(var(--size-7), 4vw, var(--size-8));
+  --size-fluid-5: clamp(var(--size-9) 5vw, var(--size-10));
+  --size-fluid-6: clamp(var(--size-10), 7vw, var(--size-11));
+  --size-fluid-7: clamp(var(--size-11), 10vw, var(--size-12));
+  --size-fluid-8: clamp(var(--size-12), 20vw, var(--size-13));
+  --size-fluid-9: clamp(var(--size-13), 30vw, var(--size-14));
+  --size-fluid-10: clamp(var(--size-14) 40vw, var(--size-15));
+  --size-content-1: 20ch;
+  --size-content-2: 45ch;
+  --size-content-3: 60ch;
+  --size-header-1: 20ch;
+  --size-header-2: 25ch;
+  --size-header-3: 72rem;
+}
