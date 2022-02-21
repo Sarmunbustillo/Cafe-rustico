@@ -1,5 +1,6 @@
 .intro {
     $mobile: 598px;
+    $desktop: 1192px;
     position: relative;
     display: grid;
 
@@ -11,23 +12,27 @@
             position: absolute;
             inset: 0;
             background-color: var(--black);
-            opacity: 0.15;
+            opacity: 0.5;
+        }
 
-            @media screen and (min-width: $mobile) {
-                opacity: 0.5;
+        span {
+            @media screen and (max-width: $mobile) {
+                aspect-ratio: 1 /1;
             }
+        }
+
+        img {
+            object-fit: cover;
         }
     }
     .textbox {
         display: grid;
 
-        @media screen and (min-width: $mobile) {
-            position: absolute;
-            z-index: var(--layer-1);
-            align-self: center;
-            justify-self: center;
-            text-align: center;
-            color: var(--brand-2);
-        }
+        position: absolute;
+        z-index: var(--layer-1);
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+        color: var(--brand-2);
     }
 }

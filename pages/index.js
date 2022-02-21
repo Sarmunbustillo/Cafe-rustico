@@ -44,6 +44,7 @@ const HOMEPAGE_QUERY = gql`
             stores {
                 id
                 storeName
+                storeAddress
                 storeWebsite
                 storeImage {
                     url
@@ -82,9 +83,9 @@ export default function Home({
                 <title>Bonita Cafe</title>
             </Head>
             <Intro details={intro} />
-            <FeaturedProduct featuredProduct={productWithIngredient} />
             <ProductCard products={productCard.product} />
             <Store stores={store.stores} />
+            <FeaturedProduct featuredProduct={productWithIngredient} />
         </>
     );
 }

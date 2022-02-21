@@ -1,23 +1,47 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import styles from './FeatureProduct.module.scss';
 
 export default function FeaturedProduct({ featuredProduct }) {
     const { product, ingredients } = featuredProduct;
+
     return (
-        <div>
-            <Image
-                src={product[0].productImage.url}
-                alt={product[0].name}
-                layout="responsive"
-                width={600}
-                height={900}
-            />
-            <h4>{product[0].productName}</h4>
-            <ul>
-                {ingredients.map(({ id, ingredient }) => {
-                    return <li key={id}>{ingredient}</li>;
-                })}
-            </ul>
-        </div>
+        <section className={styles.featuredProduct}>
+            <div>
+                <h2 className={`${styles.name} headline`}>
+                    {product[0].productName}
+                </h2>
+
+                <Image
+                    src={product[0].productImage.url}
+                    alt={product[0].name}
+                    layout="responsive"
+                    width={300}
+                    height={600}
+                />
+                <div className={styles.left}>
+                    {ingredients.map(({ id, ingredient }, i) => {
+                        if (i % 2 == 0) {
+                            return (
+                                <div className={styles.ingredient} key={id}>
+                                    <p>{ingredient}</p>
+                                </div>
+                            );
+                        }
+                    })}
+                </div>
+                <div className={styles.right}>
+                    {ingredients.map(({ id, ingredient }, i) => {
+                        if (i % 2 != 0) {
+                            return (
+                                <div className={styles.ingredient} key={id}>
+                                    <p>{ingredient}</p>
+                                </div>
+                            );
+                        }
+                    })}
+                </div>
+            </div>
+        </section>
     );
 }

@@ -1,0 +1,46 @@
+.productCards {
+    $mobile: 598px;
+
+    .headline {
+        text-align: center;
+        margin: 0 auto var(--size-7);
+    }
+    > div {
+        display: grid;
+        --_max: 1fr;
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(var(--size-11), var(--_max))
+        );
+        gap: var(--size-9);
+        max-width: 100rem;
+        justify-content: center;
+        margin: 0 auto;
+
+        @media screen and (max-width: $mobile) {
+            --_max: var(--size-13);
+        }
+    }
+    .productCard {
+        position: relative;
+        padding: var(--size-3) var(--size-4);
+        overflow: hidden;
+        text-align: center;
+        gap: var(--size-4);
+        display: grid;
+        border-radius: var(--border-size-4);
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            left: 0%;
+            bottom: 0%;
+            border-radius: var(--border-size-4);
+            z-index: -1;
+            background: var(--brand-2);
+            box-shadow: var(--shadow-4);
+        }
+    }
+}

@@ -4,7 +4,7 @@ import styles from './Intro.module.scss';
 
 export const Intro = ({ details }) => {
     return (
-        <section className={styles.intro}>
+        <section className={`${styles.intro}  span-cols `}>
             <div className={styles.image}>
                 <Image
                     src={details.bigImage.url}

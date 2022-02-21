@@ -1,0 +1,55 @@
+.stores {
+    $mobile: 598px;
+    > div {
+        display: grid;
+        --_max: 1fr;
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(var(--size-11), var(--_max))
+        );
+        @media screen and (max-width: $mobile) {
+            --_max: 100%;
+        }
+    }
+
+    a {
+        position: relative;
+        display: grid;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        &:hover {
+            img {
+                transform: scale(1.05);
+            }
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: var(--black);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        span {
+            aspect-ratio: 1 /1;
+        }
+        img {
+            transition: transform 0.3s var(--ease-2);
+            object-fit: cover;
+        }
+
+        .textbox {
+            display: grid;
+
+            position: absolute;
+            z-index: var(--layer-1);
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+            color: var(--brand-2);
+        }
+    }
+}
