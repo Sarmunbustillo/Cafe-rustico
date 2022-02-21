@@ -1,9 +1,11 @@
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './FeatureProduct.module.scss';
 
 export default function FeaturedProduct({ featuredProduct }) {
-    const { product, ingredients } = featuredProduct;
+    const { product } = featuredProduct;
+    console.log(product);
+    product;
 
     return (
         <section className={styles.featuredProduct}>
@@ -20,7 +22,7 @@ export default function FeaturedProduct({ featuredProduct }) {
                     height={600}
                 />
                 <div className={styles.left}>
-                    {ingredients.map(({ id, ingredient }, i) => {
+                    {product[0].ingredients.map(({ id, ingredient }, i) => {
                         if (i % 2 == 0) {
                             return (
                                 <div className={styles.ingredient} key={id}>
@@ -31,7 +33,7 @@ export default function FeaturedProduct({ featuredProduct }) {
                     })}
                 </div>
                 <div className={styles.right}>
-                    {ingredients.map(({ id, ingredient }, i) => {
+                    {product[0].ingredients.map(({ id, ingredient }, i) => {
                         if (i % 2 != 0) {
                             return (
                                 <div className={styles.ingredient} key={id}>

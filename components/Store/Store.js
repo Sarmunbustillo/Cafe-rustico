@@ -4,8 +4,8 @@ import styles from './Store.module.scss';
 
 export const Store = ({ stores }) => {
     return (
-        <section className={styles.stores}>
-            <h2 className={`${styles.name} headline`}>Our Branches</h2>
+        <section className={`${styles.stores}  span-cols `}>
+            <h2 className={`${styles.name} headline`}>{stores.hedline}</h2>
             <div>
                 {stores.map((store) => {
                     return (

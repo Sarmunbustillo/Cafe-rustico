@@ -17,20 +17,22 @@ const HOMEPAGE_QUERY = gql`
         }
 
         productWithIngredient {
-            ingredients {
-                ingredient
-                id
-            }
             product {
                 id
                 productName
                 productImage {
                     url
                 }
+
+                ingredients {
+                    ingredient
+                    id
+                }
             }
         }
 
         productCard {
+            headline
             product {
                 id
                 productName
@@ -41,6 +43,7 @@ const HOMEPAGE_QUERY = gql`
         }
 
         store {
+            headline
             stores {
                 id
                 storeName
