@@ -1,5 +1,6 @@
 .stores {
     $mobile: 598px;
+    margin-bottom: var(--size-10);
     > div {
         display: grid;
         --_max: 1fr;

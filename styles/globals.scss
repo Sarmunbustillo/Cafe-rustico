@@ -37,8 +37,12 @@ body {
 body {
     --brand-1: var(--beige);
     --brand-2: var(--white);
+    --highlight: #c7a17a;
+    --dark-color-text: var(--gray-9);
+    --light-color-text: var(--white);
 
     background-color: var(--brand-1);
+    color: var(--dark-color-text);
 }
 #__next {
     $mobile: 598px;
@@ -48,9 +52,8 @@ body {
             --size-3
         );
     justify-content: center;
-    padding-bottom: var(--size-11);
 
-    row-gap: clamp(var(--size-8), 5vw, var(--size-9));
+    // row-gap: clamp(var(--size-8), 5vw, var(--size-9));
 
     > * {
         grid-column: 2;

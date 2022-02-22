@@ -1,5 +1,6 @@
 .productCards {
     $mobile: 598px;
+    margin-bottom: var(--size-10);
 
     .headline {
         text-align: center;
@@ -24,7 +25,6 @@
     .productCard {
         position: relative;
         padding: var(--size-3) var(--size-4);
-        overflow: hidden;
         text-align: center;
         gap: var(--size-4);
         display: grid;
@@ -40,7 +40,7 @@
             border-radius: var(--border-size-4);
             z-index: -1;
             background: var(--brand-2);
-            box-shadow: var(--shadow-4);
+            box-shadow: var(--shadow-2);
         }
     }
 }

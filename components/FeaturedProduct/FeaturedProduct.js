@@ -4,8 +4,6 @@ import styles from './FeatureProduct.module.scss';
 
 export default function FeaturedProduct({ featuredProduct }) {
     const { product } = featuredProduct;
-    console.log(product);
-    product;
 
     return (
         <section className={styles.featuredProduct}>

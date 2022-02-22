@@ -1,6 +1,7 @@
 .featuredProduct {
     $mobile: 598px;
     $desktop: 1192px;
+    margin-bottom: var(--size-10);
 
     > div {
         display: grid;

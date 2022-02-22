@@ -5,6 +5,7 @@ import { Intro } from '../components/Intro/Intro';
 import FeaturedProduct from '../components/FeaturedProduct/FeaturedProduct';
 import { ProductCard } from '../components/ProductCard/ProductCard';
 import { Store } from '../components/Store/Store';
+import { Menu } from '../components/Menu/Menu';
 const HOMEPAGE_QUERY = gql`
     query HOMEPAGE_QUERY {
         intro {
@@ -54,6 +55,17 @@ const HOMEPAGE_QUERY = gql`
                 }
             }
         }
+        menu {
+            menu {
+                menuItemName
+                menuItemPrice
+                menuItemIngredient {
+                    ingredient
+                    id
+                }
+            }
+            menuOf
+        }
     }
 `;
 
@@ -72,13 +84,15 @@ export default function Home({
     productWithIngredient,
     productCard,
     store,
+    menu,
 }) {
     console.log(
         'from index:',
         intro,
         productWithIngredient,
         productCard,
-        store
+        store,
+        menu
     );
     return (
         <>
@@ -87,8 +101,9 @@ export default function Home({
             </Head>
             <Intro details={intro} />
             <ProductCard products={productCard.product} />
-            <Store stores={store.stores} />
+            <Menu menu={menu} fullmenu={false} />
             <FeaturedProduct featuredProduct={productWithIngredient} />
+            <Store stores={store.stores} />
         </>
     );
 }
