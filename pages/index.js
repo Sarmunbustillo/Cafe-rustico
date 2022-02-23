@@ -59,6 +59,10 @@ const HOMEPAGE_QUERY = gql`
             menu {
                 menuItemName
                 menuItemPrice
+                prices {
+                    singleShotPrice
+                    doubleShotPrice
+                }
                 menuItemIngredient {
                     ingredient
                     id

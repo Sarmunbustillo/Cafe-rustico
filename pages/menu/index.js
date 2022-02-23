@@ -11,6 +11,10 @@ const MENU_QUERY = gql`
                 id
                 menuItemName
                 menuItemPrice
+                prices {
+                    singleShotPrice
+                    doubleShotPrice
+                }
                 menuItemIngredient {
                     id
                     ingredient
@@ -44,17 +48,6 @@ export default function MenuPage({ allMenus }) {
                 <style jsx>{`
                     .menus {
                         background-color: var(--black);
-                        display: grid;
-                        grid-template-columns: repeat(
-                            auto-fit,
-                            minmax(var(--size-15), 1fr)
-                        );
-                    }
-
-                    @media screen and (max-width: 598px) {
-                        .menus {
-                            grid-template-columns: 100%;
-                        }
                     }
                 `}</style>
             </section>

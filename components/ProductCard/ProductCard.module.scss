@@ -13,7 +13,7 @@
             auto-fit,
             minmax(var(--size-11), var(--_max))
         );
-        gap: var(--size-9);
+        gap: clamp(var(--size-7), 5vw, var(--size-9));
         max-width: 100rem;
         justify-content: center;
         margin: 0 auto;

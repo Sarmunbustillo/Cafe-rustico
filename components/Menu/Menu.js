@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './Menu.module.scss';
 
 export const Menu = ({ menu, fullmenu = true }) => {
+    console.log(menu);
     const { menu: singleMenu, menuOf: headline } = menu;
     // // console.log(singleMenu, headline);
     return (
@@ -20,10 +21,45 @@ export const Menu = ({ menu, fullmenu = true }) => {
                         <li key={menu.id}>
                             <div>
                                 <h4>{menu.menuItemName}</h4>
-                                <span className={styles.line}></span>
-                                <span className={styles.price}>
-                                    {menu.menuItemPrice},-
-                                </span>
+                                <div className={styles.prices}>
+                                    <span className={styles.price}>
+                                        {menu.menuItemPrice}
+                                        {menu.menuItemPrice ? ',-' : null}
+                                    </span>
+                                    {menu.prices?.map(
+                                        (
+                                            {
+                                                singleShotPrice,
+                                                doubleShotPrice,
+                                            },
+                                            i
+                                        ) => {
+                                            return (
+                                                <div
+                                                    key={`prices-${i}`}
+                                                    className={styles.prices}
+                                                >
+                                                    <span
+                                                        className={styles.price}
+                                                    >
+                                                        {singleShotPrice}
+                                                        {singleShotPrice
+                                                            ? ',-'
+                                                            : null}
+                                                    </span>
+                                                    <span
+                                                        className={styles.price}
+                                                    >
+                                                        {doubleShotPrice}
+                                                        {doubleShotPrice
+                                                            ? ',-'
+                                                            : null}
+                                                    </span>
+                                                </div>
+                                            );
+                                        }
+                                    )}
+                                </div>
                             </div>
                             <ul className={styles.ingredients}>
                                 {menu.menuItemIngredient.map((item, i) => (
@@ -31,7 +67,10 @@ export const Menu = ({ menu, fullmenu = true }) => {
                                         className={styles.ingredient}
                                         key={item.id}
                                     >
-                                        {item.ingredient}
+                                        {item.ingredient.replace(
+                                            /((\s*\S+)*)\s*/,
+                                            '$1'
+                                        )}
                                         {menu.menuItemIngredient.length >
                                             i + 1 && ','}
                                         &nbsp;
@@ -44,7 +83,7 @@ export const Menu = ({ menu, fullmenu = true }) => {
             </ul>
             {!fullmenu && (
                 <Link href="/menu">
-                    <a className={'button button-secondary'}>Show More</a>
+                    <a className={'button button-secondary'}>See Menu</a>
                 </Link>
             )}
         </section>
