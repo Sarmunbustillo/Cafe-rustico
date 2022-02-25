@@ -1,12 +1,13 @@
 .productCards {
     $mobile: 598px;
     margin-bottom: var(--size-10);
+    overflow: hidden;
 
     .headline {
         text-align: center;
         margin: 0 auto var(--size-7);
     }
-    > div {
+    .productCardWrapper {
         display: grid;
         --_max: 1fr;
         grid-template-columns: repeat(
@@ -22,6 +23,7 @@
             --_max: var(--size-13);
         }
     }
+
     .productCard {
         position: relative;
         padding: var(--size-3) var(--size-4);
@@ -29,6 +31,10 @@
         gap: var(--size-4);
         display: grid;
         border-radius: var(--border-size-4);
+        transition: transform var(--ease-1) 0.6s var(--delay),
+            opacity var(--ease-1) 0.7s var(--delay);
+        transform: translate3d(0, 50%, 0);
+        opacity: 0;
 
         &::before {
             content: '';

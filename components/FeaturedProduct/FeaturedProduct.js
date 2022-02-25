@@ -1,13 +1,15 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './FeatureProduct.module.scss';
+import { useOnVieport } from '../../lib/useOnVieport';
 
 export default function FeaturedProduct({ featuredProduct }) {
     const { product } = featuredProduct;
-
+    const ref = useRef(null);
+    useOnVieport(ref);
     return (
         <section className={styles.featuredProduct}>
-            <div>
+            <div ref={ref}>
                 <h2 className={`${styles.name} headline`}>
                     {product[0].productName}
                 </h2>
@@ -23,7 +25,11 @@ export default function FeaturedProduct({ featuredProduct }) {
                     {product[0].ingredients.map(({ id, ingredient }, i) => {
                         if (i % 2 == 0) {
                             return (
-                                <div className={styles.ingredient} key={id}>
+                                <div
+                                    style={{ '--delay': `calc(${0.3 * i}s)` }}
+                                    className={styles.ingredient}
+                                    key={id}
+                                >
                                     <p>{ingredient}</p>
                                 </div>
                             );
@@ -34,7 +40,11 @@ export default function FeaturedProduct({ featuredProduct }) {
                     {product[0].ingredients.map(({ id, ingredient }, i) => {
                         if (i % 2 != 0) {
                             return (
-                                <div className={styles.ingredient} key={id}>
+                                <div
+                                    style={{ '--delay': `calc(${0.3 * i}s)` }}
+                                    className={styles.ingredient}
+                                    key={id}
+                                >
                                     <p>{ingredient}</p>
                                 </div>
                             );
@@ -42,6 +52,12 @@ export default function FeaturedProduct({ featuredProduct }) {
                     })}
                 </div>
             </div>
+            <style jsx>{`
+                .animate > div div {
+                    transform: translate3d(0, 0%, 0);
+                    opacity: 1;
+                }
+            `}</style>
         </section>
     );
 }
