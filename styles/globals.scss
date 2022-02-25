@@ -64,9 +64,13 @@ body {
             }
         }
 
-        // &:last-of-type {
-        //     margin-bottom: 0;
-        // }
+        &:last-of-type {
+            margin-bottom: var(--size-3);
+
+            @media screen and (max-width: $mobile) {
+                margin-bottom: 0;
+            }
+        }
     }
 }
 a {

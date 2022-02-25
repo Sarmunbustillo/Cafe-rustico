@@ -3,8 +3,22 @@ import React from 'react';
 import styles from './Menu.module.scss';
 
 export const Menu = ({ menu, fullmenu = true }) => {
-    console.log(menu);
     const { menu: singleMenu, menuOf: headline } = menu;
+    // Not the best practice, in order to style the "hot drinks / coffee" menu a bit differently
+    const keyWords = ['latte', 'cappuccino', 'cortado'];
+
+    const targetMenu = singleMenu.some((menu) => {
+        return keywordsMatch(menu.menuItemName, keyWords);
+    });
+
+    function keywordsMatch(string, arrayOfKeywords) {
+        const matchingArray = arrayOfKeywords.filter((keyword) => {
+            return string?.toLowerCase().includes(keyword?.toLowerCase());
+        });
+
+        return matchingArray.length > 0 ? true : false;
+    }
+
     // // console.log(singleMenu, headline);
     return (
         <section
@@ -15,7 +29,11 @@ export const Menu = ({ menu, fullmenu = true }) => {
             <h2 className={`${styles.name} ${!fullmenu ? 'headline' : ''} `}>
                 {headline}
             </h2>
-            <ul className={`${styles.list} ${!fullmenu ? styles.center : ''} `}>
+            <ul
+                className={`${styles.list} ${!fullmenu ? styles.center : ''} ${
+                    targetMenu ? 'target-menu' : ''
+                } `}
+            >
                 {singleMenu.map((menu) => {
                     return (
                         <li key={menu.id}>
@@ -80,6 +98,12 @@ export const Menu = ({ menu, fullmenu = true }) => {
                         </li>
                     );
                 })}
+                <style jsx>{`
+                    .target-menu span {
+                        font-size: var(--font-size-2);
+                        color: var(--brand-2);
+                    }
+                `}</style>
             </ul>
             {!fullmenu && (
                 <Link href="/menu">

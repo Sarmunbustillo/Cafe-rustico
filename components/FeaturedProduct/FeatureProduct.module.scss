@@ -9,12 +9,12 @@
         column-gap: var(--size-5);
         text-align: center;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         grid-template-columns: auto auto auto;
 
         @media screen and (max-width: $mobile) {
-            grid-template-columns: 1fr 1fr;
-            row-gap: var(--size-5);
+            grid-template-columns: 100%;
+            row-gap: var(--size-3);
             column-gap: var(--size-3);
         }
 

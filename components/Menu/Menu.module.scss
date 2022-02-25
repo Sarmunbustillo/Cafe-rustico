@@ -34,13 +34,12 @@
     .list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(var(--size-15), 1fr));
+        column-gap: var(--size-3);
+        row-gap: var(--size-7);
 
         @media screen and (max-width: $mobile) {
             grid-template-columns: 100%;
         }
-
-        column-gap: var(--size-3);
-        row-gap: var(--size-7);
 
         > li {
             display: grid;

@@ -5,9 +5,9 @@ import styles from './Store.module.scss';
 export const Store = ({ stores }) => {
     return (
         <section className={`${styles.stores}  span-cols `}>
-            <h2 className={`${styles.name} headline`}>{stores.hedline}</h2>
+            <h2 className={`${styles.name} headline`}>{stores.headline}</h2>
             <div>
-                {stores.map((store) => {
+                {stores.stores.map((store) => {
                     return (
                         <a
                             target={'_blank'}

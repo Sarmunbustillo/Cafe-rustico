@@ -19,7 +19,7 @@ export default function FeaturedProduct({ featuredProduct }) {
                     alt={product[0].name}
                     layout="responsive"
                     width={300}
-                    height={600}
+                    height={400}
                 />
                 <div className={styles.left}>
                     {product[0].ingredients.map(({ id, ingredient }, i) => {

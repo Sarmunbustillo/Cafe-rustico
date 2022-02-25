@@ -57,6 +57,7 @@ const HOMEPAGE_QUERY = gql`
         }
         menu {
             menu {
+                id
                 menuItemName
                 menuItemPrice
                 prices {
@@ -107,7 +108,7 @@ export default function Home({
             <ProductCard products={productCard.product} />
             <Menu menu={menu} fullmenu={false} />
             <FeaturedProduct featuredProduct={productWithIngredient} />
-            <Store stores={store.stores} />
+            <Store stores={store} />
         </>
     );
 }

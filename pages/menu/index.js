@@ -6,6 +6,7 @@ import { Menu } from '../../components/Menu/Menu';
 const MENU_QUERY = gql`
     query MENU_QUERY {
         allMenus {
+            id
             menuOf
             menu {
                 id
@@ -48,6 +49,7 @@ export default function MenuPage({ allMenus }) {
                 <style jsx>{`
                     .menus {
                         background-color: var(--black);
+                        margin-bottom: 0 !important;
                     }
                 `}</style>
             </section>
