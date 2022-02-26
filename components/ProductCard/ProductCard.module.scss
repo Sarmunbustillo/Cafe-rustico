@@ -49,4 +49,19 @@
             box-shadow: var(--shadow-2);
         }
     }
+
+    .links {
+        margin-top: var(--size-10);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--size-8);
+        flex-direction: column;
+        a {
+            margin-bottom: var(--size-2);
+            @media screen and (max-width: $mobile) {
+                // width: 60%;
+            }
+        }
+    }
 }

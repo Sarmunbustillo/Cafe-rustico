@@ -74,8 +74,19 @@
         list-style: none;
     }
 
-    a {
-        justify-self: center;
+    .links {
         margin-top: var(--size-10);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--size-8);
+
+        @media screen and (max-width: $mobile) {
+            flex-direction: column;
+
+            a {
+                width: 100%;
+            }
+        }
     }
 }

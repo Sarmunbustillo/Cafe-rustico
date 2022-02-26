@@ -104,6 +104,7 @@ img {
 .button {
     --button-bg: var(--black);
     --button-color-text: var(--light-color-text);
+    --button-border: var(--black);
     box-shadow: var(--shadow-small);
     display: inline-flex;
     justify-content: center;
@@ -111,6 +112,7 @@ img {
     background-color: var(--button-bg);
     color: var(--button-color-text);
     padding: 0.5em 1em;
+    border: 0.3rem solid var(--button-border);
     border-radius: var(--border-radius);
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
         border 0.3s ease-in-out;
@@ -121,7 +123,7 @@ img {
     &:hover,
     &:focus-visible {
         --button-bg: transparent;
-        --button-border: var(--highlight-darker);
+        --button-border: var(--black);
         --button-color-text: var(--dark-color-text);
     }
 
@@ -129,22 +131,21 @@ img {
         --button-bg: var(--highlight);
         --button-border: var(--highlight);
         --button-color-text: var(--light-color-text);
-        border: 0.3rem solid var(--button-border);
 
         &:hover,
         &:focus-visible {
             --button-bg: var(--transparent);
-            -button-color-text: var(--light-color-text);
+            --button-color-text: var(--light-color-text);
         }
     }
 
-    &.button-third {
+    &.button-tertiary {
         --button-border: var(--highlight);
-        border: 0.3rem solid var(--button-border);
 
         &:hover,
         &:focus-visible {
             --button-bg: var(--highlight);
+            --button-color-text: var(--light-color-text);
         }
     }
 }

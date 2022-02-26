@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React, { useRef } from 'react';
 import styles from './ProductCard.module.scss';
 import { useOnVieport } from '../../lib/useOnVieport';
+import Link from 'next/link';
 
 export const ProductCard = ({ products }) => {
     const ref = useRef(null);
@@ -17,17 +18,27 @@ export const ProductCard = ({ products }) => {
                             className={styles.productCard}
                             style={{ '--delay': `calc(${0.3 * i}s)` }}
                         >
-                            <Image
-                                src={product.productImage.url}
-                                alt={product.productName}
-                                layout="responsive"
-                                width={400}
-                                height={600}
-                            />
+                            <div>
+                                <Image
+                                    src={product.productImage.url}
+                                    alt={product.productName}
+                                    layout="responsive"
+                                    width={400}
+                                    height={600}
+                                />
+                            </div>
                             <h4>{product.productName}</h4>
                         </div>
                     );
                 })}
+            </div>
+
+            <div className={styles.links}>
+                <Link href="https://www.bonitablomster.no/flower-bonita-coffee/">
+                    <a className={'button '} target="_blank">
+                        Shop Online
+                    </a>
+                </Link>
             </div>
             <style jsx>{`
                 .animate > div {

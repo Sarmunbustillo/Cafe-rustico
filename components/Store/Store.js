@@ -25,6 +25,18 @@ export const Store = ({ stores }) => {
                             <div className={styles.textbox}>
                                 <h3>{store.storeName}</h3>
                                 <p>{store.storeAddress}</p>
+
+                                <p className="button  button-secondary">
+                                    See Website
+                                    <style jsx>{`
+                                        .button {
+                                            margin-top: var(--size-5);
+                                            margin-left: auto;
+                                            margin-right: auto;
+                                            max-width: max-content;
+                                        }
+                                    `}</style>
+                                </p>
                             </div>
                         </a>
                     );

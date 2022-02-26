@@ -105,10 +105,18 @@ export const Menu = ({ menu, fullmenu = true }) => {
                     }
                 `}</style>
             </ul>
+
             {!fullmenu && (
-                <Link href="/menu">
-                    <a className={'button button-secondary'}>See Menu</a>
-                </Link>
+                <div className={styles.links}>
+                    <Link href="/menu">
+                        <a className={'button button-secondary'}>See Menu</a>
+                    </Link>
+                    <Link href="https://wolt.com/en/nor/oslo/restaurant/bonita-caf">
+                        <a className={'button button-tertiary'} target="_blank">
+                            Order Online
+                        </a>
+                    </Link>
+                </div>
             )}
         </section>
     );
