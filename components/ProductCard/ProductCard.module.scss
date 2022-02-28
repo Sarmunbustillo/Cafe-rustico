@@ -48,6 +48,10 @@
             background: var(--brand-2);
             box-shadow: var(--shadow-2);
         }
+
+        img {
+            object-fit: contain;
+        }
     }
 
     .links {
@@ -59,9 +63,6 @@
         flex-direction: column;
         a {
             margin-bottom: var(--size-2);
-            @media screen and (max-width: $mobile) {
-                // width: 60%;
-            }
         }
     }
 }

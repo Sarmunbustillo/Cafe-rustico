@@ -14,6 +14,12 @@ const HOMEPAGE_QUERY = gql`
             title
             bigImage {
                 url
+                height
+                width
+                focalPoint {
+                    x
+                    y
+                }
             }
         }
 
@@ -23,6 +29,8 @@ const HOMEPAGE_QUERY = gql`
                 productName
                 productImage {
                     url
+                    height
+                    width
                 }
 
                 ingredients {
@@ -39,6 +47,8 @@ const HOMEPAGE_QUERY = gql`
                 productName
                 productImage {
                     url
+                    height
+                    width
                 }
             }
         }
@@ -52,6 +62,10 @@ const HOMEPAGE_QUERY = gql`
                 storeWebsite
                 storeImage {
                     url
+                    focalPoint {
+                        x
+                        y
+                    }
                 }
             }
         }

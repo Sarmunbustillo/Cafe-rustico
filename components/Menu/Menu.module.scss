@@ -47,7 +47,7 @@
             > div {
                 display: flex;
                 justify-content: space-between;
-                // gap: clamp(3rem, 10vw, 16rem);
+                gap: var(--size-3);
                 color: var(--highlight);
             }
         }

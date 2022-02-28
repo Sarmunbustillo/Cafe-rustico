@@ -13,10 +13,11 @@
             position: absolute;
             inset: 0;
             background-color: var(--black);
-            opacity: 0.5;
+            opacity: 0.6;
         }
 
         span {
+            aspect-ratio: 16 /9;
             @media screen and (max-width: $mobile) {
                 aspect-ratio: 1 /1;
             }
@@ -24,6 +25,8 @@
 
         img {
             object-fit: cover;
+            object-position: calc(var(--focal-x) * 100%)
+                calc(var(--focal-y) * 100%);
         }
     }
     .textbox {

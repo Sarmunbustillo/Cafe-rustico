@@ -40,6 +40,9 @@
         img {
             transition: transform 0.3s var(--ease-2);
             object-fit: cover;
+
+            object-position: calc(var(--focal-x) * 100%)
+                calc(var(--focal-y) * 100%);
         }
 
         .textbox {

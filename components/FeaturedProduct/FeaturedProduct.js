@@ -18,8 +18,8 @@ export default function FeaturedProduct({ featuredProduct }) {
                     src={product[0].productImage.url}
                     alt={product[0].name}
                     layout="responsive"
-                    width={300}
-                    height={400}
+                    width={product[0].productImage.width}
+                    height={product[0].productImage.height}
                 />
                 <div className={styles.left}>
                     {product[0].ingredients.map(({ id, ingredient }, i) => {

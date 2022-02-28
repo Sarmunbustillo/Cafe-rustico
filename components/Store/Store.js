@@ -14,6 +14,10 @@ export const Store = ({ stores }) => {
                             href={store.storeWebsite}
                             key={store.id}
                             rel="noreferrer"
+                            style={{
+                                '--focal-x': store.storeImage.focalPoint.x,
+                                '--focal-y': store.storeImage.focalPoint.y,
+                            }}
                         >
                             <Image
                                 src={store.storeImage.url}
