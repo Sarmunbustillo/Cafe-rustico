@@ -21,7 +21,11 @@ export const Store = ({ stores }) => {
                         >
                             <Image
                                 src={store.storeImage.url}
-                                alt={store.storeName}
+                                alt={
+                                    store.storeName !== undefined
+                                        ? store.storeName
+                                        : ' Related Stores'
+                                }
                                 layout="responsive"
                                 width={150}
                                 height={300}

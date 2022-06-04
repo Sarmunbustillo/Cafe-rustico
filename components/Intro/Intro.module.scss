@@ -17,9 +17,9 @@
         }
 
         span {
-            aspect-ratio: 16 /9;
+            aspect-ratio: var(--ratio-widescreen);
             @media screen and (max-width: $mobile) {
-                aspect-ratio: 1 /1;
+                aspect-ratio: var(--ratio-box);
             }
         }
 

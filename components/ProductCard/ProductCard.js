@@ -21,13 +21,17 @@ export const ProductCard = ({ products }) => {
                             <div>
                                 <Image
                                     src={product.productImage.url}
-                                    alt={product.productName}
+                                    alt={
+                                        product.productName !== undefined
+                                            ? product.productName
+                                            : ' Product'
+                                    }
                                     layout="responsive"
                                     width={400}
                                     height={600}
                                 />
                             </div>
-                            <h4>{product.productName}</h4>
+                            <h3 className="like-h4">{product.productName}</h3>
                         </div>
                     );
                 })}

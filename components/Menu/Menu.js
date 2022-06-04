@@ -19,7 +19,6 @@ export const Menu = ({ menu, fullmenu = true }) => {
         return matchingArray.length > 0 ? true : false;
     }
 
-    // // console.log(singleMenu, headline);
     return (
         <section
             className={`${styles.menu} ${
@@ -38,7 +37,7 @@ export const Menu = ({ menu, fullmenu = true }) => {
                     return (
                         <li key={menu.id}>
                             <div>
-                                <h4>{menu.menuItemName}</h4>
+                                <h3 className="like-h4">{menu.menuItemName}</h3>
                                 <div className={styles.prices}>
                                     <span className={styles.price}>
                                         {menu.menuItemPrice}

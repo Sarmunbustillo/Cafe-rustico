@@ -16,7 +16,11 @@ export default function FeaturedProduct({ featuredProduct }) {
 
                 <Image
                     src={product[0].productImage.url}
-                    alt={product[0].name}
+                    alt={
+                        product[0].productName !== undefined
+                            ? product[0].productName
+                            : 'Featured Product'
+                    }
                     layout="responsive"
                     width={product[0].productImage.width}
                     height={product[0].productImage.height}

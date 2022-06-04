@@ -105,18 +105,19 @@ export default function Home({
     store,
     menu,
 }) {
-    console.log(
-        'from index:',
-        intro,
-        productWithIngredient,
-        productCard,
-        store,
-        menu
-    );
     return (
         <>
             <Head>
                 <title>Bonita Cafe</title>
+                <meta property="og:title" content="Bonita Cafe" key="title" />
+                <meta
+                    name="description"
+                    content="Bonita Café and Flowers. We have created the perfect fusion of a warm and colourful Café, serving fresh juices, smoothies, colombian coffee and a selection of delicious snacks and lunches whilst being surrounded by extraordinary fresh cut flowers and tropical plants. Basically you are escaping into a south american atmosphere in the middle of Oslo and enjoying the relaxed and fun vibe. Here are some of our delicious products that you can now order direclty online, and have delivered in a nice basket or together with some of the lovely flower arrangements we make"
+                />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
             </Head>
             <Intro details={intro} />
             <ProductCard products={productCard.product} />

@@ -37,7 +37,6 @@ export async function getStaticProps() {
 }
 
 export default function MenuPage({ allMenus }) {
-    console.log('from menu:', allMenus);
     return (
         <>
             <Head>

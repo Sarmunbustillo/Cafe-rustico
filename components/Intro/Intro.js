@@ -8,7 +8,11 @@ export const Intro = ({ details }) => {
             <div className={styles.image}>
                 <Image
                     src={details.bigImage.url}
-                    alt={details.bigTitle}
+                    alt={
+                        details.title !== undefined
+                            ? details.title
+                            : 'Bonita Cafe'
+                    }
                     layout="responsive"
                     width={900}
                     height={1600}
