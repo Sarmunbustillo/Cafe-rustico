@@ -1,5 +1,5 @@
+@import '../../styles/mixins';
 .productCards {
-    $mobile: 598px;
     margin-bottom: var(--size-10);
     overflow: hidden;
 
@@ -19,7 +19,7 @@
         justify-content: center;
         margin: 0 auto;
 
-        @media screen and (max-width: $mobile) {
+        @include device-down(mobile) {
             --_max: var(--size-13);
         }
     }

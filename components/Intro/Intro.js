@@ -16,6 +16,7 @@ export const Intro = ({ details }) => {
                     layout="responsive"
                     width={900}
                     height={1600}
+                    loading="eager"
                 />
             </div>
             <div className={styles.textbox}>

@@ -1,6 +1,5 @@
+@import '../../styles/mixins';
 .featuredProduct {
-    $mobile: 598px;
-    $desktop: 1192px;
     margin-bottom: var(--size-10);
 
     > div {
@@ -12,7 +11,7 @@
         align-items: flex-start;
         grid-template-columns: auto auto auto;
 
-        @media screen and (max-width: $mobile) {
+        @include device-down(mobile) {
             grid-template-columns: 100%;
             row-gap: var(--size-3);
             column-gap: var(--size-3);
@@ -21,7 +20,7 @@
         > span {
             max-height: 50rem;
             grid-column: 2;
-            @media screen and (max-width: $mobile) {
+            @include device-down(mobile) {
                 max-height: 30rem;
                 grid-column: 1 / -1;
             }
@@ -29,7 +28,7 @@
     }
     .name {
         grid-column: 2;
-        @media screen and (max-width: $mobile) {
+        @include device-down(mobile) {
             grid-column: 1 / -1;
         }
     }
@@ -42,19 +41,19 @@
     .left {
         display: grid;
         gap: var(--size-3);
-        @media screen and (min-width: $mobile) {
+        @include device-up(mobile) {
             grid-row: 2;
             gap: var(--size-7);
         }
     }
     .left {
-        @media screen and (min-width: $mobile) {
+        @include device-up(mobile) {
             grid-column: 1;
         }
     }
 
     .right {
-        @media screen and (min-width: $mobile) {
+        @include device-up(mobile) {
             grid-column: 3;
         }
     }

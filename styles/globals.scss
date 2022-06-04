@@ -1,3 +1,4 @@
+@import 'mixins';
 html {
     font-size: 62.5%;
 }
@@ -20,8 +21,6 @@ body {
     color: var(--dark-color-text);
 }
 #__next {
-    $mobile: 598px;
-    $desktop: 1192px;
     display: grid;
     grid-template-columns: var(--size-3) min(140rem, (100% - var(--size-3) * 2)) var(
             --size-3
@@ -34,7 +33,7 @@ body {
         grid-column: 2;
 
         &.span-cols {
-            @media screen and (max-width: $mobile) {
+            @include device-down(mobile) {
                 grid-column: 1 / -1;
             }
         }
@@ -42,7 +41,7 @@ body {
         &:last-of-type {
             margin-bottom: var(--size-3);
 
-            @media screen and (max-width: $mobile) {
+            @include device-down(mobile) {
                 margin-bottom: 0;
             }
         }

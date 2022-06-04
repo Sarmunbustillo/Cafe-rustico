@@ -29,6 +29,7 @@ export const Store = ({ stores }) => {
                                 layout="responsive"
                                 width={150}
                                 height={300}
+                                loading="lazy"
                             />
                             <div className={styles.textbox}>
                                 <h3>{store.storeName}</h3>

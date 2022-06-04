@@ -1,5 +1,5 @@
+@import '../../styles/mixins';
 .stores {
-    $mobile: 598px;
     margin-bottom: var(--size-10);
     > div {
         display: grid;
@@ -8,7 +8,7 @@
             auto-fit,
             minmax(var(--size-11), var(--_max))
         );
-        @media screen and (max-width: $mobile) {
+        @include device-down(mobile) {
             --_max: 100%;
         }
     }

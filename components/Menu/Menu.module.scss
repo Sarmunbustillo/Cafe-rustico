@@ -1,6 +1,5 @@
+@import '../../styles/mixins';
 .menu {
-    $mobile: 598px;
-    $desktop: 1192px;
     display: grid;
     color: var(--brand-2);
     background-color: var(--black);
@@ -22,7 +21,7 @@
     .name {
         margin-bottom: var(--size-7);
 
-        @media screen and (min-width: $mobile) {
+        @include device-down(mobile) {
             justify-self: center;
         }
     }
@@ -37,7 +36,7 @@
         column-gap: var(--size-3);
         row-gap: var(--size-7);
 
-        @media screen and (max-width: $mobile) {
+        @include device-down(mobile) {
             grid-template-columns: 100%;
         }
 
@@ -81,7 +80,7 @@
         align-items: center;
         gap: var(--size-8);
 
-        @media screen and (max-width: $mobile) {
+        @include device-down(mobile) {
             flex-direction: column;
 
             a {

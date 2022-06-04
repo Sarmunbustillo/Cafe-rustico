@@ -1,6 +1,5 @@
+@import '../../styles/mixins';
 .intro {
-    $mobile: 598px;
-    $desktop: 1192px;
     position: relative;
     display: grid;
     margin-bottom: var(--size-10);
@@ -18,7 +17,7 @@
 
         span {
             aspect-ratio: var(--ratio-widescreen);
-            @media screen and (max-width: $mobile) {
+            @include device-down(mobile) {
                 aspect-ratio: var(--ratio-box);
             }
         }

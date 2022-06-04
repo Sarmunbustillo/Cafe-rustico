@@ -24,6 +24,7 @@ export default function FeaturedProduct({ featuredProduct }) {
                     layout="responsive"
                     width={product[0].productImage.width}
                     height={product[0].productImage.height}
+                    loading="lazy"
                 />
                 <div className={styles.left}>
                     {product[0].ingredients.map(({ id, ingredient }, i) => {
