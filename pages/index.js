@@ -108,11 +108,11 @@ export default function Home({
     return (
         <>
             <Head>
-                <title>Bonita Cafe</title>
-                <meta property="og:title" content="Bonita Cafe" key="title" />
+                <title>Cafe Rustico</title>
+                <meta property="og:title" content="Cafe Rustico" key="title" />
                 <meta
                     name="description"
-                    content="Bonita Café and Flowers. We have created the perfect fusion of a warm and colourful Café, serving fresh juices, smoothies, colombian coffee and a selection of delicious snacks and lunches whilst being surrounded by extraordinary fresh cut flowers and tropical plants. Basically you are escaping into a south american atmosphere in the middle of Oslo and enjoying the relaxed and fun vibe. Here are some of our delicious products that you can now order direclty online, and have delivered in a nice basket or together with some of the lovely flower arrangements we make"
+                    content="Cafe Rustico and Restaurant. We have created the perfect fusion of a warm and colourful Café, serving fresh juices, smoothies, colombian coffee and a selection of delicious snacks and lunches whilst being surrounded by extraordinary fresh cut flowers and tropical plants. Basically you are escaping into a south american atmosphere in the middle of Oslo and enjoying the relaxed and fun vibe. Here are some of our delicious products that you can now order direclty online, and have delivered in a nice basket or together with some of the lovely flower arrangements we make"
                 />
                 <meta
                     name="viewport"

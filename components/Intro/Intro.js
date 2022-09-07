@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import Image from 'next/image';
 import React from 'react';
 import styles from './Intro.module.scss';
@@ -8,11 +9,7 @@ export const Intro = ({ details }) => {
             <div className={styles.image}>
                 <Image
                     src={details.bigImage.url}
-                    alt={
-                        details.title !== undefined
-                            ? details.title
-                            : 'Bonita Cafe'
-                    }
+                    alt={details.title !== undefined ? details.title : 'Cafe'}
                     layout="responsive"
                     width={900}
                     height={1600}

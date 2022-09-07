@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import Link from 'next/link';
 import React from 'react';
 import styles from './Menu.module.scss';
@@ -108,11 +109,8 @@ export const Menu = ({ menu, fullmenu = true }) => {
             {!fullmenu && (
                 <div className={styles.links}>
                     <Link href="/menu">
-                        <a className={'button button-secondary'}>See Menu</a>
-                    </Link>
-                    <Link href="https://wolt.com/en/nor/oslo/restaurant/bonita-caf">
-                        <a className={'button button-tertiary'} target="_blank">
-                            Order Online
+                        <a className={'button button-secondary'}>
+                            See Full Menu
                         </a>
                     </Link>
                 </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import Image from 'next/image';
 import React, { useRef } from 'react';
 import styles from './ProductCard.module.scss';
@@ -35,14 +36,6 @@ export const ProductCard = ({ products }) => {
                         </div>
                     );
                 })}
-            </div>
-
-            <div className={styles.links}>
-                <Link href="https://www.bonitablomster.no/flower-bonita-coffee/">
-                    <a className={'button '} target="_blank">
-                        Shop Online
-                    </a>
-                </Link>
             </div>
             <style jsx>{`
                 .animate > div {

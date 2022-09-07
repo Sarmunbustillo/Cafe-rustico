@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import Image from 'next/image';
 import React from 'react';
 import styles from './Store.module.scss';

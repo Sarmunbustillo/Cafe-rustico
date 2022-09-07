@@ -1,7 +1,8 @@
+/* eslint-disable react/no-unknown-property */
 import Head from 'next/head';
 import { gql } from 'graphql-request';
-import { request } from '../../lib/datocms';
-import { Menu } from '../../components/Menu/Menu';
+import { request } from '../lib/datocms';
+import { Menu } from '../components/Menu/Menu';
 import Link from 'next/link';
 
 const MENU_QUERY = gql`
@@ -40,7 +41,7 @@ export default function MenuPage({ allMenus }) {
     return (
         <>
             <Head>
-                <title>Bonita Cafe Menu</title>
+                <title>Cafe Rustico Menu</title>
             </Head>
             <section className="menus span-cols">
                 {allMenus.map((menu) => (
@@ -48,14 +49,6 @@ export default function MenuPage({ allMenus }) {
                 ))}
 
                 <div className="links">
-                    <Link href="https://wolt.com/en/nor/oslo/restaurant/bonita-caf">
-                        <a
-                            className={'button button-secondary'}
-                            target="_blank"
-                        >
-                            Order Online
-                        </a>
-                    </Link>
                     <Link href="/">
                         <a className={'button button-tertiary'}>Go back</a>
                     </Link>
@@ -64,7 +57,20 @@ export default function MenuPage({ allMenus }) {
                     .menus {
                         background-color: var(--black);
                         margin-bottom: 0 !important;
+                        position: relative;
                     }
+
+                    .menus::before {
+                        content: '';
+                        position: absolute;
+                        background-color: var(--black);
+                        z-index: -1;
+                        pointer-events: none;
+                        width: 150vw;
+                        height: 100%;
+                        transform: translate(-25vw, 0);
+                    }
+
                     .links {
                         margin-top: var(--size-8);
                         margin-bottom: var(--size-10);

@@ -6,7 +6,7 @@
         --_max: 1fr;
         grid-template-columns: repeat(
             auto-fit,
-            minmax(var(--size-11), var(--_max))
+            minmax(min(var(--size-11), 100%), var(--_max))
         );
         @include device-down(mobile) {
             --_max: 100%;

@@ -21,7 +21,8 @@
     .name {
         margin-bottom: var(--size-7);
 
-        @include device-down(mobile) {
+        @include device-up(mobile) {
+            text-align: center;
             justify-self: center;
         }
     }
